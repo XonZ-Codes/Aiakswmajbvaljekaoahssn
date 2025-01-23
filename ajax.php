@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo json_encode($response);
     }elseif(isset($_POST['create_license'])){    
         list($license, $expirationDate) = generateLicense();
-        $activationLink = 'https://xonz.codes/activate.php?license=' . urlencode($license);
+        $activationLink = 'https://server.xonzx.cloud/activate.php?license=' . urlencode($license);
         $licenseDataFile = 'Xonz/database/license_data.json';
         $licenseData = $DataJson2;
         $licenseData[$license] = ['expiration_date' => $expirationDate, 'status' => false];
